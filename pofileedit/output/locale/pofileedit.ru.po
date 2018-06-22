@@ -1,0 +1,242 @@
+msgid \"
+msgstr "Content-Type: text/plain; charset=UTF-8"
+ 
+#: mainunit.rstringabout1
+msgid "Простейший редактор PO файлов"
+msgstr "Простейший редактор PO файлов"
+ 
+#: mainunit.rstringabout2
+msgid "с возможностью перевода через Яндекс."
+msgstr "с возможностью перевода через Яндекс."
+ 
+#: mainunit.rstringabout3
+msgid "Автор: Павел Рыбалка, 2018 г. Израиль."
+msgstr "Автор: Павел Рыбалка, 2018 г. Израиль."
+ 
+#: mainunit.rstringasctosave
+msgid "Сохранить файл?"
+msgstr "Сохранить файл?"
+ 
+#: mainunit.rstringfileloaded
+msgid "Файл загружен"
+msgstr "Файл загружен"
+ 
+#: mainunit.rstringfilenotfound
+msgid "Файл %s не найден"
+msgstr "Файл %s не найден"
+ 
+#: mainunit.rstringfilenotpo
+msgid "Файл %s не PO файл"
+msgstr "Файл %s не PO файл"
+ 
+#: mainunit.rstringfilesaved
+msgid "Файл сохранен"
+msgstr "Файл сохранен"
+ 
+#: mainunit.rstringhintabout
+msgid "О программе"
+msgstr "О программе"
+ 
+#: mainunit.rstringhintcopy1
+msgid "Копировать исходный текст в переведенный"
+msgstr "Копировать исходный текст в переведенный"
+ 
+#: mainunit.rstringhintcopy2
+msgid "Копировать все исходные тексты в переведенные"
+msgstr "Копировать все исходные тексты в переведенные"
+ 
+#: mainunit.rstringhintnottr
+msgid "Выполнять только для непереведенных"
+msgstr "Выполнять только для непереведенных"
+ 
+#: mainunit.rstringhintopen
+msgid "Открыть PO файл"
+msgstr "Открыть PO файл"
+ 
+#: mainunit.rstringhintsave
+msgid "Сохранить PO файл"
+msgstr "Сохранить PO файл"
+ 
+#: mainunit.rstringhintsettings
+msgctxt "mainunit.rstringhintsettings"
+msgid "Настройки"
+msgstr "Настройки"
+ 
+#: mainunit.rstringhinttrans
+msgid "Перевести с помощью Яндекса"
+msgstr "Перевести с помощью Яндекса"
+ 
+#: mainunit.rstringnothing
+msgid "Нечего сохранять"
+msgstr "Нечего сохранять"
+ 
+#: mainunit.rstringtranslated
+msgid "Переведено:%d Осталось:%d"
+msgstr "Переведено:%d Осталось:%d"
+ 
+#: tmainform.button1.caption
+msgid "Яндекс перевод"
+msgstr "Яндекс перевод"
+ 
+#: tmainform.button2.caption
+msgid "Копировать исходный"
+msgstr "Копировать исходный"
+ 
+#: tmainform.button3.caption
+msgid "Копировать все"
+msgstr "Копировать все"
+ 
+#: tmainform.caption
+msgid "Редактор"
+msgstr "Редактор"
+ 
+#: tmainform.checkbox1.caption
+msgid "Для непереведенных"
+msgstr "Для непереведенных"
+ 
+#: tmainform.label1.caption
+msgid "Исходный текст"
+msgstr "Исходный текст"
+ 
+#: tmainform.label2.caption
+msgid "Переведенный текст"
+msgstr "Переведенный текст"
+ 
+#: tmainform.label3.caption
+msgid "С языка"
+msgstr "С языка"
+ 
+#: tmainform.label4.caption
+msgid "На язык"
+msgstr "На язык"
+ 
+#: tmainform.labelededit1.editlabel.caption
+msgid "Заголовок"
+msgstr "Заголовок"
+ 
+#: tmainform.labelededit1.text
+msgctxt "tmainform.labelededit1.text"
+msgid "LabeledEdit1"
+msgstr "LabeledEdit1"
+ 
+#: tmainform.labelededit2.editlabel.caption
+msgid "Дополнение"
+msgstr "Дополнение"
+ 
+#: tmainform.labelededit2.text
+msgid "LabeledEdit2"
+msgstr "LabeledEdit2"
+ 
+#: tmainform.labelededit3.editlabel.caption
+msgid "Поиск"
+msgstr "Поиск"
+ 
+#: tmainform.labelededit3.text
+msgid "LabeledEdit3"
+msgstr "LabeledEdit3"
+ 
+#: tmainform.saveasitem.caption
+msgid "Сохранить как..."
+msgstr "Сохранить как..."
+ 
+#: tmainform.saveitem.caption
+msgid "Сохранить"
+msgstr "Сохранить"
+ 
+#: tmainform.takefromfilebutton.caption
+msgid "Взять переводы из файла"
+msgstr "Взять переводы из файла"
+ 
+#: tsettingsform.button1.caption
+msgid "Сохранить"
+msgstr "Сохранить"
+ 
+#: tsettingsform.button2.caption
+msgid "Закрыть"
+msgstr "Закрыть"
+ 
+#: tsettingsform.checkbox2.caption
+msgid "Запоминать выбор перевода"
+msgstr "Запоминать выбор перевода"
+ 
+#: tsettingsform.groupbox1.caption
+msgctxt "tsettingsform.groupbox1.caption"
+msgid "Язык программы:"
+msgstr "Язык программы:"
+ 
+#: tsettingsform.label1.caption
+msgctxt "tsettingsform.label1.caption"
+msgid "https://translate.yandex.ru/developers/keys"
+msgstr "https://translate.yandex.ru/developers/keys"
+ 
+#: tsettingsform.labelededit1.editlabel.caption
+msgid "Ключ"
+msgstr "Ключ"
+ 
+#: tsettingsform.labelededit1.text
+msgctxt "tsettingsform.labelededit1.text"
+msgid "LabeledEdit1"
+msgstr "LabeledEdit1"
+ 
+#: tsettingsform.langcodeedit.editlabel.caption
+msgctxt "tsettingsform.langcodeedit.editlabel.caption"
+msgid "Код"
+msgstr "Код"
+ 
+#: tsettingsform.langeditlabel.caption
+msgctxt "tsettingsform.langeditlabel.caption"
+msgid "x"
+msgstr "x"
+ 
+#: tsettingsform.langlabelededit.editlabel.caption
+msgid "Язык"
+msgstr "Язык"
+ 
+#: tsettingsform.speedbutton1.hint
+msgid "Добавить язык"
+msgstr "Добавить язык"
+ 
+#: tsettingsform.statictext1.caption
+msgid "StaticText1"
+msgstr "StaticText1"
+ 
+#: tsettingsform.statictext2.caption
+msgid "StaticText2"
+msgstr "StaticText2"
+ 
+#: yandexunit.rsstringlangcodemissing
+msgid "Нужен код языка!"
+msgstr "Нужен код языка!"
+ 
+#: yandexunit.rsstringlangfilemissing
+msgid "Сначала создайте новый файл локализации"
+msgstr "Сначала создайте новый файл локализации"
+ 
+#: yandexunit.rsstringyandexerror
+msgid "Ошибка Яндекса:"
+msgstr "Ошибка Яндекса:"
+ 
+#: yandexunit.rstringlangadd
+msgid "Добавить новый язык интерфейса?"
+msgstr "Добавить новый язык интерфейса?"
+ 
+#: yandexunit.rstringlangedit
+msgid "Для сохранения данных нажмите кнопку повторно"
+msgstr "Для сохранения данных нажмите кнопку повторно"
+ 
+#: yandexunit.rstringstatic1
+msgid "Для перевода с помощью Яндекса вам нужно иметь ключ разработчика. Его можно получить совершенно бесплатно."
+msgstr "Для перевода с помощью Яндекса вам нужно иметь ключ разработчика. Его можно получить совершенно бесплатно."
+ 
+#: yandexunit.rstringstatic2
+msgid "Используйте ссылку ниже этого текста чтобы зайти на Яндекс.Переводчик. Авторизуйтесь, если Яндекс об этом"
+msgstr "Используйте ссылку ниже этого текста чтобы зайти на Яндекс.Переводчик. Авторизуйтесь, если Яндекс об этом"
+ 
+#: yandexunit.rstringstatic3
+msgid "попросит. Нажмите кнопку \"+Создать  новый ключ\". Скопируйте ключ в поле \"Ключ\" на форме и нажмите \"Сохранить\"."
+msgstr "попросит. Нажмите кнопку \"+Создать  новый ключ\". Скопируйте ключ в поле \"Ключ\" на форме и нажмите \"Сохранить\"."
+ 
+#: yandexunit.rstringstatic4
+msgid "Ключ будет сохранен в файле конфигурации программы:"
+msgstr "Ключ будет сохранен в файле конфигурации программы:"
+ 

@@ -1,0 +1,15 @@
+{"version":1,"strings":[
+{"hash":130590263,"name":"tsettingsform.labelededit1.editlabel.caption","sourcebytes":[208,154,208,187,209,142,209,135],"value":"\u041A\u043B\u044E\u0447"},
+{"hash":246168657,"name":"tsettingsform.labelededit1.text","sourcebytes":[76,97,98,101,108,101,100,69,100,105,116,49],"value":"LabeledEdit1"},
+{"hash":265316305,"name":"tsettingsform.statictext1.caption","sourcebytes":[83,116,97,116,105,99,84,101,120,116,49],"value":"StaticText1"},
+{"hash":265316306,"name":"tsettingsform.statictext2.caption","sourcebytes":[83,116,97,116,105,99,84,101,120,116,50],"value":"StaticText2"},
+{"hash":145480483,"name":"tsettingsform.label1.caption","sourcebytes":[104,116,116,112,115,58,47,47,116,114,97,110,115,108,97,116,101,46,121,97,110,100,101,120,46,114,117,47,100,101,118,101,108,111,112,101,114,115,47,107,101,121,115],"value":"https://translate.yandex.ru/developers/keys"},
+{"hash":130758128,"name":"tsettingsform.checkbox2.caption","sourcebytes":[208,151,208,176,208,191,208,190,208,188,208,184,208,189,208,176,209,130,209,140,32,208,178,209,139,208,177,208,190,209,128,32,208,191,208,181,209,128,208,181,208,178,208,190,208,180,208,176],"value":"\u0417\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u0442\u044C \u0432\u044B\u0431\u043E\u0440 \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u0430"},
+{"hash":150970026,"name":"tsettingsform.groupbox1.caption","sourcebytes":[208,175,208,183,209,139,208,186,32,208,191,209,128,208,190,208,179,209,128,208,176,208,188,208,188,209,139,58],"value":"\u042F\u0437\u044B\u043A \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B:"},
+{"hash":93776316,"name":"tsettingsform.button1.caption","sourcebytes":[208,161,208,190,209,133,209,128,208,176,208,189,208,184,209,130,209,140],"value":"\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"},
+{"hash":154490284,"name":"tsettingsform.button2.caption","sourcebytes":[208,151,208,176,208,186,209,128,209,139,209,130,209,140],"value":"\u0417\u0430\u043A\u0440\u044B\u0442\u044C"},
+{"hash":77219258,"name":"tsettingsform.speedbutton1.hint","sourcebytes":[208,148,208,190,208,177,208,176,208,178,208,184,209,130,209,140,32,209,143,208,183,209,139,208,186],"value":"\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u044F\u0437\u044B\u043A"},
+{"hash":214213898,"name":"tsettingsform.langlabelededit.editlabel.caption","sourcebytes":[208,175,208,183,209,139,208,186],"value":"\u042F\u0437\u044B\u043A"},
+{"hash":229100468,"name":"tsettingsform.langcodeedit.editlabel.caption","sourcebytes":[208,154,208,190,208,180],"value":"\u041A\u043E\u0434"},
+{"hash":120,"name":"tsettingsform.langeditlabel.caption","sourcebytes":[120],"value":"x"}
+]}

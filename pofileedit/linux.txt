@@ -1,0 +1,3 @@
+linux mint need install for openssl:
+
+sudo apt-get install libssl1.0.0 libssl-dev
