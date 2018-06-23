@@ -156,13 +156,13 @@ begin
      begin
           if Pos('MonitorItem',PositionItem.Items[i].Name)>0 then
           begin
-               PositionItem.Delete(i);
+               aitem := PositionItem.Items[i];
+               aitem.Free;
                Continue;
           end;
           if PositionItem.Items[i].Name = 'SplitItem2' then
           begin
                num := i;
-               break;
           end;
      end;
 
@@ -320,6 +320,7 @@ end;
 procedure TfMainMP.FormShow(Sender: TObject);
 begin
      SetDefaultLang(deflang,'locale');
+     EnumMonitors;
      MakeTransparentWindow;
 end;
 
@@ -368,6 +369,7 @@ begin
      end;
      WriteSettings;
      SetDefaultLang(deflang,'locale');
+     EnumMonitors;
 end;
 
 procedure TfMainMP.CloseItemClick(Sender: TObject);
