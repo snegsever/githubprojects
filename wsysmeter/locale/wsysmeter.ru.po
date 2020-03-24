@@ -29,6 +29,10 @@ msgstr "О программе"
 msgid "Autostart"
 msgstr "Автозапуск"
 
+#: tfmainmp.bclabel1.caption
+msgid "24:59:59"
+msgstr ""
+
 #: tfmainmp.caption
 msgid "fMainMP"
 msgstr ""

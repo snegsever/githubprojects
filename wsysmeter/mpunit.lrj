@@ -1,9 +1,10 @@
 {"version":1,"strings":[
 {"hash":188220224,"name":"tfmainmp.caption","sourcebytes":[102,77,97,105,110,77,80],"value":"fMainMP"},
+{"hash":178401852,"name":"tfmainmp.datelabel.caption","sourcebytes":[68,97,116,101,76,97,98,101,108],"value":"DateLabel"},
+{"hash":131649241,"name":"tfmainmp.bclabel1.caption","sourcebytes":[50,52,58,53,57,58,53,57],"value":"24:59:59"},
 {"hash":94534716,"name":"tfmainmp.cpulabel.caption","sourcebytes":[67,80,85,76,97,98,101,108],"value":"CPULabel"},
 {"hash":170032556,"name":"tfmainmp.memlabel.caption","sourcebytes":[77,69,77,76,97,98,101,108],"value":"MEMLabel"},
 {"hash":106045452,"name":"tfmainmp.swaplabel.caption","sourcebytes":[83,87,65,80,76,97,98,101,108],"value":"SWAPLabel"},
-{"hash":178401852,"name":"tfmainmp.datelabel.caption","sourcebytes":[68,97,116,101,76,97,98,101,108],"value":"DateLabel"},
 {"hash":111192878,"name":"tfmainmp.positionitem.caption","sourcebytes":[80,111,115,105,116,105,111,110],"value":"Position"},
 {"hash":39364244,"name":"tfmainmp.toprightitem.caption","sourcebytes":[84,111,112,32,82,105,103,104,116],"value":"Top Right"},
 {"hash":103100004,"name":"tfmainmp.topleftitem.caption","sourcebytes":[84,111,112,32,76,101,102,116],"value":"Top Left"},

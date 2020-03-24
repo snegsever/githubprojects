@@ -1,10 +1,10 @@
 object fMainMP: TfMainMP
-  Left = 887
-  Height = 303
-  Top = 365
+  Left = 394
+  Height = 175
+  Top = 227
   Width = 184
   Caption = 'fMainMP'
-  ClientHeight = 303
+  ClientHeight = 175
   ClientWidth = 184
   Color = clSilver
   Icon.Data = {
@@ -42,73 +42,150 @@ object fMainMP: TfMainMP
   OnDestroy = FormDestroy
   OnShow = FormShow
   PopupMenu = PM
-  LCLVersion = '1.8.2.0'
+  LCLVersion = '1.8.4.0'
   object SysPanel: TPanel
     Left = 0
-    Height = 193
+    Height = 124
     Top = 0
     Width = 184
     Align = alTop
-    ClientHeight = 193
+    ClientHeight = 124
     ClientWidth = 184
     TabOrder = 0
-    object CPULabel: TLabel
-      Left = 2
-      Height = 13
-      Top = 145
-      Width = 50
-      Caption = 'CPULabel'
-      Font.Height = -11
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-    end
-    object MEMLabel: TLabel
-      Left = 2
-      Height = 13
-      Top = 161
-      Width = 56
-      Caption = 'MEMLabel'
-      Font.Height = -11
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-    end
-    object SWAPLabel: TLabel
-      Left = 2
-      Height = 13
-      Top = 177
-      Width = 60
-      Caption = 'SWAPLabel'
-      Font.Height = -11
-      Font.Style = [fsBold]
-      ParentColor = False
-      ParentFont = False
-    end
-    object DTAnalogClock1: TDTAnalogClock
-      Left = 28
-      Height = 128
-      Top = 1
-      Width = 128
-      Enabled = False
-    end
     object DateLabel: TLabel
-      Left = 2
+      Left = 1
       Height = 13
-      Top = 130
+      Top = 62
       Width = 182
+      Align = alTop
       Alignment = taCenter
       AutoSize = False
       Caption = 'DateLabel'
       Font.Height = -11
       Font.Style = [fsBold]
+      ParentBidiMode = False
       ParentColor = False
       ParentFont = False
+      ParentShowHint = False
+      ShowAccelChar = False
+    end
+    object BCLabel1: TBCLabel
+      Left = 1
+      Height = 61
+      Top = 1
+      Width = 182
+      Align = alTop
+      Background.Color = clBlack
+      Background.ColorOpacity = 255
+      Background.Gradient1.StartColor = clWhite
+      Background.Gradient1.StartColorOpacity = 255
+      Background.Gradient1.DrawMode = dmSet
+      Background.Gradient1.EndColor = clBlack
+      Background.Gradient1.EndColorOpacity = 255
+      Background.Gradient1.ColorCorrection = True
+      Background.Gradient1.GradientType = gtLinear
+      Background.Gradient1.Point1XPercent = 0
+      Background.Gradient1.Point1YPercent = 0
+      Background.Gradient1.Point2XPercent = 0
+      Background.Gradient1.Point2YPercent = 100
+      Background.Gradient1.Sinus = False
+      Background.Gradient2.StartColor = clWhite
+      Background.Gradient2.StartColorOpacity = 255
+      Background.Gradient2.DrawMode = dmSet
+      Background.Gradient2.EndColor = clBlack
+      Background.Gradient2.EndColorOpacity = 255
+      Background.Gradient2.ColorCorrection = True
+      Background.Gradient2.GradientType = gtLinear
+      Background.Gradient2.Point1XPercent = 0
+      Background.Gradient2.Point1YPercent = 0
+      Background.Gradient2.Point2XPercent = 0
+      Background.Gradient2.Point2YPercent = 100
+      Background.Gradient2.Sinus = False
+      Background.Gradient1EndPercent = 35
+      Background.Style = bbsClear
+      Border.Color = clBlack
+      Border.ColorOpacity = 255
+      Border.LightColor = clWhite
+      Border.LightOpacity = 255
+      Border.LightWidth = 0
+      Border.Style = bboNone
+      Border.Width = 1
+      Caption = '24:59:59'
+      FontEx.Color = clGreen
+      FontEx.EndEllipsis = False
+      FontEx.FontQuality = fqSystemClearType
+      FontEx.Height = 45
+      FontEx.SingleLine = True
+      FontEx.Shadow = False
+      FontEx.ShadowColor = clBlack
+      FontEx.ShadowColorOpacity = 255
+      FontEx.ShadowRadius = 5
+      FontEx.ShadowOffsetX = 5
+      FontEx.ShadowOffsetY = 5
+      FontEx.Style = [fsBold]
+      FontEx.TextAlignment = bcaCenter
+      FontEx.WordBreak = False
+      InnerMargin = 0
+      Rounding.RoundX = 1
+      Rounding.RoundY = 1
+      Rounding.RoundOptions = []
+    end
+    object Panel1: TPanel
+      Left = 1
+      Height = 45
+      Top = 78
+      Width = 182
+      Align = alTop
+      ClientHeight = 45
+      ClientWidth = 182
+      TabOrder = 0
+      object CPULabel: TLabel
+        Left = 2
+        Height = 13
+        Top = 1
+        Width = 50
+        Caption = 'CPULabel'
+        Font.Height = -11
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object MEMLabel: TLabel
+        Left = 2
+        Height = 13
+        Top = 15
+        Width = 56
+        Caption = 'MEMLabel'
+        Font.Height = -11
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object SWAPLabel: TLabel
+        Left = 2
+        Height = 13
+        Top = 29
+        Width = 60
+        Caption = 'SWAPLabel'
+        Font.Height = -11
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object Bevel1: TBevel
+      Left = 1
+      Height = 3
+      Top = 75
+      Width = 182
+      Align = alTop
+      Shape = bsSpacer
+      Style = bsRaised
     end
   end
   object PM: TPopupMenu
     left = 136
-    top = 8
+    top = 72
     object PositionItem: TMenuItem
       Caption = 'Position'
       object TopRightItem: TMenuItem
@@ -182,14 +259,14 @@ object fMainMP: TfMainMP
   end
   object APr: TApplicationProperties
     OnUserInput = APrUserInput
-    left = 64
-    top = 8
+    left = 104
+    top = 104
   end
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    left = 8
-    top = 8
+    left = 40
+    top = 112
   end
   object TI: TTrayIcon
     PopUpMenu = PM
@@ -224,7 +301,22 @@ object fMainMP: TfMainMP
       0000000000000000000000000000000000000000000000000000000000000000
       0000
     }
+    Hint = 'Clock and System Meter'
     left = 75
     top = 72
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 2000
+    OnTimer = Timer2Timer
+    left = 27
+    top = 31
+  end
+  object Timer3: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer3Timer
+    left = 120
+    top = 32
   end
 end

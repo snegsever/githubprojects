@@ -8,13 +8,14 @@ uses
   Windows, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, ComCtrls, Menus, LMessages, LCLIntf, LCLType, contnrs, jwaWinBase,
   BGRAFlashProgressBar, LCLTranslator, t4a_loginitems, IniFiles, LazFileUtils,
-  DTAnalogClock, fileinfo;
+  BCLabel, fileinfo, LazUTF8, uInstanceManager;
 
 resourcestring
-  rstringusage = 'usage';
+  rstringusage  = 'usage';
   rstringabout1 = 'Clock, system and disks usage meter.';
   rstringabout3 = 'Author: Pavel Rybalka, 2018, Israel.';
   rstringscreen = 'Monitor';
+  rstringhint   = 'Clock and System Meter';
 
 const
   diskpanelheight = 30;
@@ -24,12 +25,14 @@ type
 
   TfMainMP = class(TForm)
     APr: TApplicationProperties;
+    BCLabel1: TBCLabel;
+    Bevel1: TBevel;
     CPULabel: TLabel;
     DateLabel: TLabel;
-    DTAnalogClock1: TDTAnalogClock;
     MEMLabel: TLabel;
     AutostartItem: TMenuItem;
     AboutItem: TMenuItem;
+    Panel1: TPanel;
     SplitItem3: TMenuItem;
     SplitItem2: TMenuItem;
     LanguageItem: TMenuItem;
@@ -38,6 +41,8 @@ type
     SWAPLabel: TLabel;
     CloseItem: TMenuItem;
     PositionItem: TMenuItem;
+    Timer2: TTimer;
+    Timer3: TTimer;
     TopRightItem: TMenuItem;
     TopLeftItem: TMenuItem;
     CustomItem: TMenuItem;
@@ -56,6 +61,8 @@ type
     procedure CloseItemClick(Sender: TObject);
     procedure MonitorItem0Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure Timer2Timer(Sender: TObject);
+    procedure Timer3Timer(Sender: TObject);
     procedure TopRightItemClick(Sender: TObject);
   private
     FLastIdleTime: Int64;
@@ -66,6 +73,7 @@ type
     formpoz :TPoint;
     ainifilename, deflang :string;
     inifile : TMemIniFile;
+    FInstanceManager: TInstanceManager;
     procedure MakeTransparentWindow;
     procedure EnumMonitors;
     procedure SetFormPosition(iparam :integer);
@@ -75,6 +83,7 @@ type
     procedure GetSystemMem(var mempct :double; var swappct :double);
     procedure GetSystemDrivesList(alist :TComponentList);
     function Faligntype :integer;
+    function CheckLocaleBiDiRTL :boolean;
   public
 
   end;
@@ -123,6 +132,18 @@ begin
 end;
 
 { TfMainMP }
+
+function TfMainMP.CheckLocaleBiDiRTL :boolean;
+var
+   slang     :string;
+begin
+     Result := True;
+     LazGetShortLanguageID(slang);
+     Result := (slang='ar') or (slang='az') or
+        (slang='dv') or (slang='he') or
+        (slang='ku') or (slang='fa') or
+        (slang='ur');
+end;
 
 function TfMainMP.CPUusagePCT :double;
 var
@@ -269,8 +290,30 @@ begin
 end;
 
 procedure TfMainMP.FormCreate(Sender: TObject);
-var i, ih :integer;
+const
+  CAppUnique = '{6996647A-318E-4AC0-A94E-B15694210FE2}';
+var
+   i, ih :integer;
 begin
+     FInstanceManager := TInstanceManager.Create(CAppUnique);
+     FInstanceManager.Check;
+     case FInstanceManager.Status of
+     isFirst:
+      begin
+        FInstanceManager.SetFormHandleForActivate(Handle);
+      end;
+     isSecond:
+      begin
+        FInstanceManager.ActivateFirstInstance(BytesOf(GetCommandLineW));
+        Application.Terminate;
+      end;
+     end;
+
+     if CheckLocaleBiDiRTL then
+        DateLabel.BiDiMode := bdRightToLeft
+     else
+       DateLabel.BiDiMode := bdLeftToRight;
+
      BorderStyle:=bsNone;
      ShowInTaskBar := stNever;
      CPULabel.Caption := '';
@@ -305,7 +348,10 @@ begin
          ih := ih +  diskpanelheight;
      fMainMP.ClientHeight := ih;
 
-     DTAnalogClock1.Enabled := True;
+     Timer3Timer(self);
+     Timer3.Enabled := True;
+     Timer2Timer(self);
+     Timer2.Enabled := True;
      Timer1Timer(self);
      Timer1.Enabled := true;
      TI.Show;
@@ -313,13 +359,17 @@ end;
 
 procedure TfMainMP.FormDestroy(Sender: TObject);
 begin
-     inifile.Free;
-     DiskPanelsList.Free;
+     FInstanceManager.Free;
+     if Assigned(inifile) then
+        inifile.Free;
+     if Assigned(DiskPanelsList) then
+        DiskPanelsList.Free;
 end;
 
 procedure TfMainMP.FormShow(Sender: TObject);
 begin
      SetDefaultLang(deflang,'locale');
+     TI.Hint := rstringhint;
      EnumMonitors;
      MakeTransparentWindow;
 end;
@@ -369,6 +419,7 @@ begin
      end;
      WriteSettings;
      SetDefaultLang(deflang,'locale');
+     TI.Hint := rstringhint;
      EnumMonitors;
 end;
 
@@ -389,21 +440,24 @@ end;
 
 procedure TfMainMP.Timer1Timer(Sender: TObject);
 var
-   totalsize, totalfree :int64;
    amem, aswap          :double;
+begin
+     CPULabel.Caption := 'CPU '+rstringusage+': ' + Format('%d', [Round(CPUusagePCT)]) + '%';
+     GetSystemMem(amem, aswap);
+     MEMLabel.Caption := 'RAM '+rstringusage+': ' + Format('%d', [Round(amem)]) + '%';
+     SWAPLabel.Caption:=  'SWAP '+rstringusage+': ' + Format('%d', [Round(aswap)]) + '%';
+
+     DateLabel.Caption := FormatDateTime('dddd dd mmmm yyyy', Now);
+end;
+
+procedure TfMainMP.Timer2Timer(Sender: TObject);
+var
+   totalsize, totalfree :int64;
    i, j, idx :integer;
    precapt :string;
 begin
-    //CPULabel.Caption := 'CPU '+rstringusage+': ' + Format('%.2f', [CPUusagePCT]) + '%';
-     CPULabel.Caption := 'CPU '+rstringusage+': ' + Format('%d', [Round(CPUusagePCT)]) + '%';
-    GetSystemMem(amem, aswap);
-    //MEMLabel.Caption := 'RAM '+rstringusage+': ' + Format('%.2f', [amem]) + '%';
-    //SWAPLabel.Caption:=  'SWAP '+rstringusage+': ' + Format('%.2f', [aswap]) + '%';
-    MEMLabel.Caption := 'RAM '+rstringusage+': ' + Format('%d', [Round(amem)]) + '%';
-    SWAPLabel.Caption:=  'SWAP '+rstringusage+': ' + Format('%d', [Round(aswap)]) + '%';
-
-    for I := 0 to DiskPanelsList.Count - 1 do
-    begin
+     for I := 0 to DiskPanelsList.Count - 1 do
+     begin
          totalfree := DiskFree((DiskPanelsList[i] as TPanel).Tag);
          totalsize := DiskSize((DiskPanelsList[i] as TPanel).Tag);
          precapt := '';
@@ -415,8 +469,6 @@ begin
                    precapt := Copy(((DiskPanelsList[i] as TPanel).Controls[j] as TLabel).Name,
                            idx+1, Length(((DiskPanelsList[i] as TPanel).Controls[j] as TLabel).Name));
                    precapt := precapt + ':\ '+
-                           //FormatByteSize(totalsize-totalfree) + '/' + FormatByteSize(totalsize) +
-                           //'/' + Format('%.2f', [(totalsize-totalfree)*100/totalsize]) + '%';
                            FormatByteSize(totalsize-totalfree,'0') + '/' + FormatByteSize(totalsize,'0') +
                            '/' + Format('%d', [Round((totalsize-totalfree)*100/totalsize)]) + '%';
 
@@ -426,9 +478,13 @@ begin
                  ((DiskPanelsList[i] as TPanel).Controls[j] as TBGRAFlashProgressBar).Value :=
                  Round((totalsize-totalfree)*100/totalsize);
          end;
-    end;
+     end;
+     SetFormPosition(Faligntype);
+end;
 
-    DateLabel.Caption := FormatDateTime('dd mmmm yyyy hh:nn:ss', Now);
+procedure TfMainMP.Timer3Timer(Sender: TObject);
+begin
+     BCLabel1.Caption := FormatDateTime('hh:nn:ss', Now());
 end;
 
 procedure TfMainMP.TopRightItemClick(Sender: TObject);

@@ -3,31 +3,35 @@ msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: mpunit.rstringabout1
 msgid "Clock, system and disks usage meter."
-msgstr "Часы, система и диски."
+msgstr "Clock, system and disks usage meter."
 
 #: mpunit.rstringabout3
 msgid "Author: Pavel Rybalka, 2018, Israel."
-msgstr "Автор: Павел Рыбалка, 2018, Израиль."
+msgstr "Author: Pavel Rybalka, 2018, Israel."
 
 #: mpunit.rstringhint
 msgid "Clock and System Meter"
-msgstr "Часы и системa"
+msgstr "Clock and System Meter"
 
 #: mpunit.rstringscreen
 msgid "Monitor"
-msgstr "Монитор"
+msgstr "Monitor"
 
 #: mpunit.rstringusage
 msgid "usage"
-msgstr "занято"
+msgstr "usage"
 
 #: tfmainmp.aboutitem.caption
 msgid "About"
-msgstr "О программе"
+msgstr "About"
 
 #: tfmainmp.autostartitem.caption
 msgid "Autostart"
-msgstr "Автозапуск"
+msgstr "Autostart"
+
+#: tfmainmp.bclabel1.caption
+msgid "24:59:59"
+msgstr ""
 
 #: tfmainmp.caption
 msgid "fMainMP"
@@ -35,7 +39,7 @@ msgstr ""
 
 #: tfmainmp.closeitem.caption
 msgid "Close"
-msgstr "Закрыть"
+msgstr "Close"
 
 #: tfmainmp.cpulabel.caption
 msgid "CPULabel"
@@ -43,7 +47,7 @@ msgstr "CPULabel"
 
 #: tfmainmp.customitem.caption
 msgid "Custom"
-msgstr "Свободное"
+msgstr "Custom"
 
 #: tfmainmp.datelabel.caption
 msgid "DateLabel"
@@ -55,7 +59,7 @@ msgstr "English"
 
 #: tfmainmp.languageitem.caption
 msgid "Language"
-msgstr "Язык"
+msgstr "Language"
 
 #: tfmainmp.memlabel.caption
 msgid "MEMLabel"
@@ -63,7 +67,7 @@ msgstr "MEMLabel"
 
 #: tfmainmp.positionitem.caption
 msgid "Position"
-msgstr "Положение"
+msgstr "Position"
 
 #: tfmainmp.russianitem.caption
 msgid "Русский"
@@ -75,9 +79,9 @@ msgstr "SWAPLabel"
 
 #: tfmainmp.topleftitem.caption
 msgid "Top Left"
-msgstr "Вверху слева"
+msgstr "Top Left"
 
 #: tfmainmp.toprightitem.caption
 msgid "Top Right"
-msgstr "Вверху справа"
+msgstr "Top Right"
 
