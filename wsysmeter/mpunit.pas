@@ -29,6 +29,7 @@ type
     Bevel1: TBevel;
     CPULabel: TLabel;
     DateLabel: TLabel;
+    DateLabel1 : TLabel;
     MEMLabel: TLabel;
     AutostartItem: TMenuItem;
     AboutItem: TMenuItem;
@@ -278,7 +279,7 @@ begin
              apgrbar.Top := 20;
              apgrbar.Width := 180;
              apgrbar.Height := 6;
-             apgrbar.Color := clRed;
+             apgrbar.BarColor := clLime;
 
            end;
          end;
@@ -310,9 +311,15 @@ begin
      end;
 
      if CheckLocaleBiDiRTL then
-        DateLabel.BiDiMode := bdRightToLeft
+     begin
+        DateLabel.BiDiMode := bdRightToLeft;
+        DateLabel1.BiDiMode := bdRightToLeft;
+     end
      else
+     begin
        DateLabel.BiDiMode := bdLeftToRight;
+       DateLabel1.BiDiMode := bdLeftToRight;
+     end;
 
      BorderStyle:=bsNone;
      ShowInTaskBar := stNever;
@@ -447,7 +454,8 @@ begin
      MEMLabel.Caption := 'RAM '+rstringusage+': ' + Format('%d', [Round(amem)]) + '%';
      SWAPLabel.Caption:=  'SWAP '+rstringusage+': ' + Format('%d', [Round(aswap)]) + '%';
 
-     DateLabel.Caption := FormatDateTime('dddd dd mmmm yyyy', Now);
+     DateLabel.Caption := FormatDateTime('dddd', Now);
+     DateLabel1.Caption := FormatDateTime('dd mmmm yyyy', Now);
 end;
 
 procedure TfMainMP.Timer2Timer(Sender: TObject);
@@ -475,8 +483,14 @@ begin
                   ((DiskPanelsList[i] as TPanel).Controls[j] as TLabel).Caption := precapt;
               end;
               if (DiskPanelsList[i] as TPanel).Controls[j] is TBGRAFlashProgressBar then
+              begin
                  ((DiskPanelsList[i] as TPanel).Controls[j] as TBGRAFlashProgressBar).Value :=
-                 Round((totalsize-totalfree)*100/totalsize);
+                    Round((totalsize-totalfree)*100/totalsize);
+                 if (Round((totalsize-totalfree)*100/totalsize)) > 75 then
+                    ((DiskPanelsList[i] as TPanel).Controls[j] as TBGRAFlashProgressBar).BarColor := clRed
+                 else
+                   ((DiskPanelsList[i] as TPanel).Controls[j] as TBGRAFlashProgressBar).BarColor := clLime;
+              end;
          end;
      end;
      SetFormPosition(Faligntype);
